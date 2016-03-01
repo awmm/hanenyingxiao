@@ -1,0 +1,76 @@
+//
+//  CRM_PrefixHeader.pch
+//  移动营销
+//
+//  Created by Hanen 3G 01 on 16/2/23.
+//  Copyright © 2016年 Hanen 3G 01. All rights reserved.
+//
+
+#ifndef CRM_PrefixHeader_pch
+#define CRM_PrefixHeader_pch
+#import "AppDelegate.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* CRM_PrefixHeader_pch */
+
+
+#define KSCreenW [UIScreen mainScreen].bounds.size.width
+#define KSCreenH [UIScreen mainScreen].bounds.size.height
+
+//深橘色#e05427
+#define darkOrangeColor [UIColor colorWithRed:224.0f/255.0f green:84.0f/255.0f blue:39.0f/255.0f alpha:1]
+//橘黄色#e15427
+#define mainOrangeColor [UIColor colorWithRed:238.0f/255.0f green:102.0f/255.0f blue:55.0f/255.0f alpha:1]
+//黄色#f8af3f
+#define yellowBgColor [UIColor colorWithRed:248.0f/255.0f green:175.0f/255.0f blue:63.0f/255.0f alpha:1]
+//灰色字体#a2a2a2
+#define grayFontColor [UIColor colorWithRed:162.0f/255.0f green:162.0f/255.0f blue:162.0f/255.0f alpha:1]
+//浅灰色字体
+#define lightGrayFontColor [UIColor colorWithRed:128.0f/255.0f green:128.0f/255.0f blue:128.0f/255.0f alpha:1]
+//灰色分割线
+#define grayLineColor [UIColor colorWithRed:227.0f/255.0f green:227.0f/255.0f blue:227.0f/255.0f alpha:1]
+//黑色#303133
+#define blackFontColor [UIColor colorWithRed:48.0f/255.0f green:49.0f/255.0f blue:51.0f/255.0f alpha:1]
+//蓝色#33c2d5
+#define blueFontColor [UIColor colorWithRed:51.0f/255.0f green:194.0f/255.0f blue:213.0f/255.0f alpha:1]
+//灰色section背景色 搜索色
+#define graySectionColor [UIColor colorWithRed:241.0f/255.0f green:241.0f/255.0f blue:241.0f/255.0f alpha:1]
+//灰色列表线色
+#define grayListColor [UIColor colorWithRed:210.0f/255.0f green:210.0f/255.0f blue:210.0f/255.0f alpha:1]
+
+#define HEAD_URL @"http://172.16.9.29:8080/"
+#define GET_IMGCODE_URL @""HEAD_URL"crm/app/getImgCode"
+#define GET_PHONECODE_URL @""HEAD_URL"crm/app/getPhoneCode"
+#define REGISTER_URL @""HEAD_URL"crm/app/register"
+#define LOGIN_URL @""HEAD_URL"crm/app/login"
+
+#define FIND_PASS_URL @""HEAD_URL"crm/app/findPass"
+#define MODIFY_PASS_URL @""HEAD_URL"crm/app/modifyPassword"
+
+#define COMMEN_USER_NOTICE_URL @""HEAD_URL"/crm/app/getNoticeListByReaderId"//普通用户公告
+#define MANAGER_CREAT_NOTICE_URL @""HEAD_URL"/crm/app/admin/saveNotice"//管理员新建公告
+#define NOTICE_DETAIL_URL @""HEAD_URL"/crm/app/admin/getNoticeById"
+//公告详情
+#define MANAGERS_NOTICE_URL @""HEAD_URL"/crm/app/getNoticeListByReaderId"//管理员我的公告列表
+
+
+
+#import "UIView+Extension.h"
+#import "UIView+ViewFrame.h"
+#import "DateTool.h"
+#import "ViewTool.h"
+#import "ColorHeader.h"
+#import "AFNetworking.h"
+
+CG_INLINE CGRect
+CGRectMake1(CGFloat x,CGFloat y,CGFloat width,CGFloat height)
+{
+    AppDelegate *app = [UIApplication sharedApplication].delegate;
+    return CGRectMake(x * app.autoSizeScaleX, y * app.autoSizeScaleY, width * app.autoSizeScaleX, height * app.autoSizeScaleX);
+}
+
+#define IPhone4S  self.view.height == 480
+#define IPhone4SInCell [UIScreen mainScreen].bounds.size.height == 480
+#define IOS7  [[[UIDevice currentDevice] systemVersion] floatValue] == 7
